@@ -35,12 +35,11 @@ def print_runs(runs):
     print("\n".join(str(r) for r in runs))
 
 
-def parse_file():    
-    with open("2015.csv", "rt") as csvfile:
-        csvreader = csv.DictReader(csvfile)
-        runs = []
-        for line in csvreader:
-            runs.append(Run(line['Date'], line['Distance'], line['Duration'], line['Average Pace'], line['Average Speed'], line['Calories Burned'], line['Notes']))
+with open("2015.csv", "rt") as csvfile:
+    csvreader = csv.DictReader(csvfile)
+    runs = []
+    for line in csvreader:
+        runs.append(Run(line['Date'], line['Distance'], line['Duration'], line['Average Pace'], line['Average Speed'], line['Calories Burned'], line['Notes']))
 
 parse_file()
 
